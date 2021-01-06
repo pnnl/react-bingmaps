@@ -1,0 +1,11 @@
+.addressForm {
+  background-color: #008272;
+  border-radius: 10px;
+  color: #fff;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.addressForm input[type="text"] {
+  width: 256px;
+}
