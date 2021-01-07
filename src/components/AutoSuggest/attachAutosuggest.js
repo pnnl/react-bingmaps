@@ -169,7 +169,7 @@ export default function attachAutosuggest(Control) {
     const suggestionDomIds = suggestions ? suggestions.map((suggestion, index) => `${uniqueDomId}a-as-${index}`) : [];
 
     return (
-      <div>
+      <React.Fragment>
         <Control
           ref={ref}
           onBlur={handleControlBlur}
@@ -197,44 +197,47 @@ export default function attachAutosuggest(Control) {
               ) : (suggestions.length === 0) ? (
                 null
               ) : (
-                <div className="b_cards asOuterContainer">
-                  <div style={{ display: 'none', }}>
-                    <p className="b_secondaryText nearBySearchText">{null}</p>
-                  </div>
-                  <ul>
-                    {
-                      suggestions.map((suggestion, index) => {
-                        return (
-                          <li key={index} id={suggestionDomIds[index]} aria-selected={index === selectedSuggestionIndex} role="option">
-                            <a onMouseDown={handleSuggestLinkMouseDownFor(suggestion, index)} className={`suggestLink ${(index === selectedSuggestionIndex) ? 'selected' : null}`} href="/">
-                              <div className="as_suggestion_root_inside">
-                                <div className={_getSuggestionImgClassName(suggestion)} style={{ height: 35, }}></div>
-                                <div className="as_lines_root">
-                                  <p className="line1">{suggestion.title}</p>
-                                  <p className="line2">{suggestion.subtitle}</p>
+                <React.Fragment>
+                  <div className="b_cards asOuterContainer">
+                    <div style={{ display: 'none', }}>
+                      <p className="b_secondaryText nearBySearchText">{null}</p>
+                    </div>
+                    <ul>
+                      {
+                        suggestions.map((suggestion, index) => {
+                          return (
+                            <li key={index} id={suggestionDomIds[index]} aria-selected={index === selectedSuggestionIndex} role="option">
+                              <a onMouseDown={handleSuggestLinkMouseDownFor(suggestion, index)} className={`suggestLink ${(index === selectedSuggestionIndex) ? 'selected' : null}`} href="/">
+                                <div className="as_suggestion_root_inside">
+                                  <div className={_getSuggestionImgClassName(suggestion)} style={{ height: 35, }}></div>
+                                  <div className="as_lines_root">
+                                    <p className="line1">{suggestion.title}</p>
+                                    <p className="line2">{suggestion.subtitle}</p>
+                                  </div>
                                 </div>
-                              </div>
-                            </a>
-                          </li>
-                        )
-                      })
-                    }
-                    <li className="as_bpr" role="option" style={{ display: (inPrivateLinkVisible ? 'block' : 'none'), }}>
-                      <div className="as_bprtxt">
-                        <div className="as_bprtxt_line1">Your search history and site cookies aren't saved.</div>
-                        <a onClick={handleInPrivateLinkClick} className="as_bprlink" href="/">Learn more about InPrivate Search</a>
-                      </div>
-                    </li>
-                  </ul>
-                  <div className="bingLogoContainer" style={{ display: 'inline', }}>
-                    <span className="bingLogoLight"></span>
+                              </a>
+                            </li>
+                          )
+                        })
+                      }
+                      <li className="as_bpr" role="option" style={{ display: (inPrivateLinkVisible ? 'block' : 'none'), }}>
+                        <div className="as_bprtxt">
+                          <div className="as_bprtxt_line1">Your search history and site cookies aren't saved.</div>
+                          <a onClick={handleInPrivateLinkClick} className="as_bprlink" href="/">Learn more about InPrivate Search</a>
+                        </div>
+                      </li>
+                    </ul>
+                    <div className="bingLogoContainer" style={{ display: 'inline', }}>
+                      <span className="bingLogoLight"></span>
+                    </div>
                   </div>
-                </div>
+                  <div class="clear"></div>
+                </React.Fragment>
               )
             }
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   };
 
