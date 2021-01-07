@@ -2035,14 +2035,14 @@ Microsoft.Maps.Search.SearchManager.apiTypes = function createSearchManager(api)
 Microsoft.Maps.SpatialMath.apiTypes = undefined
 
 Microsoft.Maps.SpatialMath.useLocationRectToPolygon.apiTypes = function locationRectToPolygon(api) {
-  const _createLocation = Microsoft.Maps.Location.apiTypes(api);
+  const _createLocationRect = Microsoft.Maps.LocationRect.apiTypes(api);
 
-  if (_createLocation && api && api.Maps && api.Maps.SpatialMath && api.Maps.SpatialMath.locationRectToPolygon) {
-    return (location) => {
-      const _location = _createLocation(location);
+  if (_createLocationRect && api && api.Maps && api.Maps.SpatialMath && api.Maps.SpatialMath.locationRectToPolygon) {
+    return (locationRect) => {
+      const _locationRect = _createLocationRect(locationRect);
 
-      if (_location) {
-        return api.Maps.SpatialMath.locationRectToPolygon(_location);
+      if (_locationRect) {
+        return api.Maps.SpatialMath.locationRectToPolygon(_locationRect);
       } else {
         return undefined;
       }
