@@ -956,7 +956,7 @@ const Microsoft = {
           return useApiTypes(Microsoft.Maps.SpatialMath.Geometry.useCentroid, shape);
         },
         useDistance: (shapeA, shapeB, units) => {
-          return useApiTypes(Microsoft.Maps.SpatialMath.Geometry.useCentroid, shapeA, shapeB, units);
+          return useApiTypes(Microsoft.Maps.SpatialMath.Geometry.useDistance, shapeA, shapeB, units);
         },
       },
       useLocationRectToPolygon: (locationRect) => {
