@@ -1087,7 +1087,7 @@ function createShapes(api) {
 
   if (_createShape) {
     return (arr) => {
-      return Array.isArray(arr) ? arr.map((shape) => Array.isArray(shape) ? shape.map(_createShape) : _createShape(shape)) : _createShape(shapes);
+      return Array.isArray(arr) ? arr.map((shape) => Array.isArray(shape) ? shape.map(_createShape) : _createShape(shape)) : _createShape(arr);
     };
   } else {
     return undefined;
