@@ -2037,7 +2037,7 @@ Microsoft.Maps.SpatialMath.apiTypes = undefined
 Microsoft.Maps.SpatialMath.useLocationRectToPolygon.apiTypes = function locationRectToPolygon(api) {
   const _createLocation = Microsoft.Maps.Location.apiTypes(api);
 
-  if (_createLocation && api && api.Maps && api.maps.SpatialMath && api.Maps.SpatialMath.locationRectToPolygon) {
+  if (_createLocation && api && api.Maps && api.Maps.SpatialMath && api.Maps.SpatialMath.locationRectToPolygon) {
     return (location) => {
       const _location = _createLocation(location);
 
