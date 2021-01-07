@@ -231,7 +231,7 @@ export default function attachAutosuggest(Control) {
                       <span className="bingLogoLight"></span>
                     </div>
                   </div>
-                  <div class="clear"></div>
+                  <div className="clear"></div>
                 </React.Fragment>
               )
             }
