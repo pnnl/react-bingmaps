@@ -336,7 +336,7 @@ const Microsoft = {
 
         return React.useMemo(() => {
           if (api && api.Maps && api.Maps.Events && target && eventName) {
-            api.Maps.Events.hasHandler(target, eventName);
+            return api.Maps.Events.hasHandler(target, eventName);
           } else {
             return undefined;
           }
